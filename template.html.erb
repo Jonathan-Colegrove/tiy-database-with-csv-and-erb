@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+
+  body {
+    background-color: lime;
+  }
+
+  ul {
+    list-style: none;
+    list-style: square;
+    padding-bottom: 8px;
+    border-bottom-color: gold;
+    border-bottom-style: groove;
+  }
+
+  li  {
+    list-style: none;
+  }
+
+  h1 {
+    color: white;
+    text-shadow:
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+    text-align: center;
+  }
+
+  h3 {
+    padding-left: 10px;
+  }
+  </style>
+
+  <body>
+    <h1>Employee Report</h1>
+
+    <% positions.each do |position| %>
+      <h2><%= position %></h2>
+      <h3>Salary</h3>
+      <ul>
+        <li>Minimum: $<%= minimum_salary(position) %></li>
+        <li>Average: $<%= average_salary(position) %></li>
+        <li>Maximum: $<%= maximum_salary(position) %></li>
+        <li>
+          <%= employee_count(position) %>
+          Employees:
+
+          <%= employee_names(position) %>
+        </li>
+      </ul>
+    <% end %>
+</body>
+</html>
